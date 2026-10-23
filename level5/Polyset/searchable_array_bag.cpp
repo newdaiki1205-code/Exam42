@@ -17,7 +17,7 @@ searchable_array_bag::operator=(const searchable_array_bag &other) {
 searchable_array_bag::~searchable_array_bag() {}
 
 bool searchable_array_bag::has(int _target) const {
-  for (int i; i < size; i++) {
+  for (int i= 0; i < size; i++) {
     if (data[i] == _target)
       return true;
   }
