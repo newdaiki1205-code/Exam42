@@ -2,6 +2,7 @@
 # define SEARCHABLE_TREE_BAG_HPP
 
 #include "tree_bag.hpp"
+#include "searchable_bag.hpp"
 
 class  searchable_tree_bag :virtual public searchable_bag,  public tree_bag {
 		public:
