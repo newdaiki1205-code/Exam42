@@ -12,9 +12,11 @@ set::set(const set& other) {
 set& set::operator=(const set& other){
 		if(this == &other)
 				return *this;
-		_bag = &other.get_bag();
+		_bag = other._bag;
 		return *this;
 }
+
+set::~set(){}
 
 void set::insert(int value){
 		if(!_bag)

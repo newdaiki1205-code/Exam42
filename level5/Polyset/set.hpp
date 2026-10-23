@@ -12,6 +12,7 @@ class set {
 				set(searchable_bag& bag);
 				set(const set& other);
 				set& operator=(const set& other);
+				~set();
 				
 				void insert(int value);
 				void insert(int *arr, int size);
