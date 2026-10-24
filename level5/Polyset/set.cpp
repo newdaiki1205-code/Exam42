@@ -1,18 +1,17 @@
 #include "set.hpp"
 #include <cstdlib>
+#include <stdexcept>
 
 set::set(): _bag(NULL) {}
 
 set::set(searchable_bag& bag): _bag(&bag){}
 
-set::set(const set& other) {
-		*this = other;
-}
+set::set(const set& other) : _bag(other._bag){}
 
 set& set::operator=(const set& other){
 		if(this == &other)
 				return *this;
-		_bag = other._bag;
+		*this = set(other);
 		return *this;
 }
 
@@ -37,13 +36,13 @@ void set::insert(int *arr, int size){
 
 searchable_bag& set::get_bag()  {
 		if(!_bag)
-				throw 42;
+				throw std::runtime_error("Error");
 		return *_bag;
 }
 
 const searchable_bag& set::get_bag() const {
 		if(!_bag)
-				throw 42;
+				throw std::runtime_error("Error");
 		return *_bag;
 }
 
