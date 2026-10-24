@@ -35,7 +35,15 @@ void set::insert(int *arr, int size){
 		}
 }
 
-searchable_bag& set::get_bag() const {
+searchable_bag& set::get_bag()  {
+		if(!_bag)
+				throw 42;
+		return *_bag;
+}
+
+const searchable_bag& set::get_bag() const {
+		if(!_bag)
+				throw 42;
 		return *_bag;
 }
 
